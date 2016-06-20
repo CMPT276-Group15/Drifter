@@ -1,5 +1,5 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<h1>Sessions</h1>
+<!--<p>Find me in app/views/sessions/new.html.erb</p> // Remove from implementation-->
 
 
 <% provide(:title, "Log in") %>
@@ -17,7 +17,6 @@
 
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
-
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
   </div>
+  <p>New user? <%= link_to "Sign up now!", signup_path, :class => "button_log", :method => :get %></p>
 </div>
