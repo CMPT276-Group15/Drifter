@@ -14,10 +14,13 @@ h1{
 }
 #block_buttons{ //login + sign up buttons block
 	position: absolute;
-    left: 40%;
+    left: 39%;
 	text-align: center;
 	font-size: 150%;
 	padding-below: 100%;
+}
+#blurb_top{
+	text-align: center;
 }
 a{
 	background: transparent url('bt_1.png') no-repeat scroll center;
@@ -29,6 +32,4 @@ a{
 	padding-right: 18px; /* sliding doors padding */
 	text-decoration: none;
 }
-blurb-top{
-	text-aligh: center;
-}
+
