@@ -2,34 +2,61 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body{
-    background-color: lightblue;
-    background-image: url("bg_texture_1");
-    background-repeat: no-repeat;
-    background-position: 0% 0%;
-    background-size: 100%;
+    background-color: #BBB155;
+    //Implement background image
+    //background-image: url("bg_texture_1");
+    //background-repeat: no-repeat;
+    //background-position: 0% 0%;
+    //background-size: 100%;
+}
+h3{
+	float: left;
 }
 h1{
+	clear: left;
 	text-align: center;
 	font-size: 300%;
 }
+a{
+	//background: transparent url('bt_1.png') no-repeat scroll center; //Code to implement image/texture background
+	color: #000;
+	display: block;
+	height: 10%;
+	margin-right: 10px;
+	
+	text-decoration: none;
+	text-align: center;
+}
+
+.button_log{
+	background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10%;
+    float: left;
+}
 #block_buttons{ //login + sign up buttons block
-	position: absolute;
-    left: 39%;
 	text-align: center;
 	font-size: 150%;
-	padding-below: 100%;
+	top-padding: 20px;
+	left-padding: 20px;
+	right-padding: 20px;
+	overflow: auto;
+	position: relative;
+    left: 35%;
 }
 #blurb_top{
 	text-align: center;
-}
-a{
-	background: transparent url('bt_1.png') no-repeat scroll center;
-	color: #000;
-	display: block;
-	float: left;
-	height: 300%;
-	margin-right: 6px;
-	padding-right: 18px; /* sliding doors padding */
-	text-decoration: none;
-}
+	
+}/*
+#p_buttons{
+	height: 100%;
+	width: 100%;
+}*/
+
 

@@ -17,7 +17,7 @@
 	<p> Let's guide eachother! </p>
 	</div>
 	<div id = 'block_buttons'>
-	<p><%= link_to "Login!", login_path %> <%= link_to "Sign up now!", signup_path %></p>
+	<p id = 'p_buttons'><%= button_to "Login!", login_path, :class => "button_log", :method => :get %> <%= button_to "Sign up!", signup_path, :class => "button_log", :method => :get %></p>
 	</div>
 	
 	<!--<p>Explore our site <%= link_to "Check out some posts!", articles_path %></p> // Implement later-->
