@@ -34,6 +34,11 @@
   </aside>
 </div>
 
+<% if current_user.admin? %>
+  <h1> USER IS ADMIN </h1>
+<% else %>
+  <h1> USER IS REGULAR USER </h1>
+<% end %>
 
 
 </body>

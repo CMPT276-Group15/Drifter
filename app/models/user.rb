@@ -10,11 +10,21 @@ class User < ActiveRecord::Base
                       uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
+  
+  #Multiple user roles
+  enum role: [:student, :admin]
+  after_initialize :set_default_role, :if => :new_record?
 
+  def set_default_role
+    self.role ||= :student
+  end
+  
   # Returns the hash digest of the given string.
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
-  end
+  
+  
+end
