@@ -1,14 +1,11 @@
 <body class="userBody">
-<ul>
 
-
-<li>
+<p>
   <%= link_to 'User', user_path %>
-</li>
-  <li>
+<p>
+<p>
   <%= link_to 'Articles', articles_path %>
-</li>
-</ul>
+<p>
 <% provide(:title, @user.name) %>
 <h1>
   <%= gravatar_for @user %>
