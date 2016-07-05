@@ -46,3 +46,21 @@ thead th{
 .list_line_odd{
   background-color: #FEFEFA;
 }
+#articleWrapper{
+  background-color: green;
+}
+#titlebubble{
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  background-color: red;
+  text-align: center;
+}
+#textbubble{
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+  text-align: left;
+}
