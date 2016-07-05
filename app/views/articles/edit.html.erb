@@ -1,35 +1,55 @@
 <h1>Editing article</h1>
- 
-<%= form_for :article, url: article_path(@article), method: :patch do |f| %>
- 
-  <% if @article.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@article.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @article.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
- 
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
- 
-  <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
- 
+
+
+
+<% if @article.errors.any? %>
+ <div id="error_explanation">
+  <h2>
+    <%= pluralize(@article.errors.count, "error") %> prohibited
+    this article from being saved:
+  </h2>
+    <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+ </div>
 <% end %>
- 
-<%= link_to 'Back', articles_path %>
+
+<div class='row'>
+    <div class='col-xs-12'>
+        
+        <%= form_for(@article, :html => { class: "form-horizontal", role:"form", method: :patch }) do |f| %>
+            <div class="form-group">
+                <div class="control-label col-sm-2">
+                    <%= f.label :title,"Your Title:" %>
+                </div>
+                <div class="col-sm-8">
+                    <%= f.text_field :title, class: "form-control", placeholder: "Title of article", autofocus: true %>
+                </div>
+                
+
+            </div>
+            <div class="form-group">
+                <div class="control-label col-sm-2">            
+                    <%= f.label :text, "Description:" %>
+                    
+                </div>
+                <div class="col-sm-8">
+                    <%= f.text_area :text, rows: 10, class: "form-control", placeholder: "Body of article" %>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <%= f.submit class:'btn btn-primary btn-lg' %>
+                </div>
+            </div>
+        <% end %>
+        <br><br><br>
+        <div class="col-xs-10 col-xs-offset-1.7">
+            <%= link_to 'Cancel Update', articles_path, class:'btn btn-danger btn-lg' %>
+        </div>
+
+    </div>
+</div>
+
