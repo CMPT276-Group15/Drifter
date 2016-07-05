@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   post 'login' => 'messages#login'
 
 
-
-
   get 'users/new'
 
   get 'sessions/new'

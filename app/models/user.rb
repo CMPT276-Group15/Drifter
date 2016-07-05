@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
-  #Multiple user roles
+  #Multiple user roles // Identifies between admins on 
   enum role: [:student, :admin]
   after_initialize :set_default_role, :if => :new_record?
 
