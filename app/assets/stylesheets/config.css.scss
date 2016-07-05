@@ -17,7 +17,37 @@ $navbar-default-bg: orange;
     
 }
 
+.center {
+    text-align: center;
+    
+}
 
+.jumbotron {
+    padding-top: 15px;
+    background-image: asset-url('bg_map_2.jpg');
+    background-size:100% 100%;
+    overflow: hidden;
+    height: 600px;
+
+}
+
+.jumbotron h1 {
+    color: white !important;
+    text-align: center;
+    margin-top: 2px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    
+}
+
+.jumbotron p {
+    color: white !important;
+    text-align: center;
+    margin-top: 2px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    
+}
 
 
 @import "bootstrap-sprockets";
