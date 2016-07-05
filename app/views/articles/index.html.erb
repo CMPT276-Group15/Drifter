@@ -3,6 +3,8 @@
 
 <%= link_to 'New article', new_article_path, class:'btn btn-success btn-lg' %>
 
+<br><br><br>
+
 <% @articles.each do |article| %>
 <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
@@ -13,7 +15,7 @@
             <div class="article-body">
                 <%= truncate(article.text, length: 100) %>        <!-- I dont want to display the whole message because it takes up so much space -->
                 <div class="article-meta-details"></div>
-                    <small>Created by: <%= article.user.username if article.user %>, <%= time_ago_in_words(article.created_at) %> ago, last updated: <%= time_ago_in_words(article.updated_at) %> ago </small>
+                    <small>Created by: <%= article.user if article.user %>, <%= time_ago_in_words(article.created_at) %> ago, last updated: <%= time_ago_in_words(article.updated_at) %> ago </small>
             </div>    
             </div>
             <div class="article-actions">
@@ -23,4 +25,5 @@
         </div>
     </div>
 </div>
+<br><br>
 <% end %>
