@@ -15,9 +15,22 @@ table tr td{
 #Show{
   background-color: blue;
   border: solid black;
+  text-align: center;
+}
+#Edit{
+  background-color: green;
+  border: solid black;
+  text-align: center;
+
+}
+#Delete{
+  background-color: red;
+  border: solid black;
+  text-align: center;
+
 }
 thead{
-  text-align: left;
+clear:both;  
   background-color: #00308f;
   color: #FFF;
 
