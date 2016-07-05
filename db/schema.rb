@@ -38,12 +38,15 @@ ActiveRecord::Schema.define(version: 20160705213340) do
 
   add_index "comments", ["article_id"], name: "index_comments_on_article_id", using: :btree
 
-  create_table "messages", force: :cascade do |t|
-    t.text     "body"
-    t.integer  "sender_id"
+  create_table "journals", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "journals", ["user_id", "created_at"], name: "index_journals_on_user_id_and_created_at", using: :btree
+  add_index "journals", ["user_id"], name: "index_journals_on_user_id", using: :btree
 
   create_table "recipients", force: :cascade do |t|
     t.integer  "message_id"
@@ -51,6 +54,17 @@ ActiveRecord::Schema.define(version: 20160705213340) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id", using: :btree
+  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
+  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -64,13 +78,6 @@ ActiveRecord::Schema.define(version: 20160705213340) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
-  create_table "widgets", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "stock"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   add_foreign_key "comments", "articles"
+  add_foreign_key "journals", "users"
 end
