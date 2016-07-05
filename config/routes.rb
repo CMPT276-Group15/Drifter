@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-  resources :messages
   resources :users
-
-  post 'login' => 'messages#login'
-
-
-
 
   get 'users/new'
 

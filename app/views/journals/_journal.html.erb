@@ -1,0 +1,8 @@
+<li id="journal-<%= journal.id %>">
+<%= link_to gravatar_for(journal.user, size: 50), journal.user %>
+<span class="user"><%= link_to journal.user.name, journal.user %></span>
+<span class="content"><%= journal.content %></span>
+<span class="timestamp">
+Posted <%= time_ago_in_words(journal.created_at) %> ago.
+</span>
+</li>
