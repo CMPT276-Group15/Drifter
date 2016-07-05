@@ -8,11 +8,14 @@
 </head>
 <body>
     <%= render 'layouts/navbar' %>
-  
+
     <div class="container">
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
+
+      <img src="images/bg_texture_1" alt="bgmap" />
+
       <%= yield %>
       <%= debug(params) if Rails.env.development? %>
     </div>
