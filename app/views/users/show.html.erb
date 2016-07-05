@@ -1,25 +1,9 @@
 <body class="userBody">
 
-<p>
-  <%= link_to 'User', users_path %>
-<p>
-<p>
-  <%= link_to 'Edit', edit_user_path %>
-<p>
-  <%= link_to 'Articles', articles_path %>
-<p>
-<% provide(:title, @user.name) %>
-<h1>
-  <%= gravatar_for @user %>
-  Hello,
-  <%= @user.name %>
-</h1>
-<p>
-  Your Selected name:
-  <%= @user.name %><br>
-  Your email:
-  <%= @user.email %><br>
-</p>
+
+<!-- <% provide(:title, @user.name) %> -->
+
+
 
 <% provide(:title, @user.name) %>
 <div class="row">

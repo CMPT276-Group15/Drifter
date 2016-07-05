@@ -1,22 +1,20 @@
 Rails.application.routes.draw do
-  resources :messages
   resources :users
-
-  post 'login' => 'messages#login'
-
 
   get 'users/new'
 
   get 'sessions/new'
-
   get 'welcome/index'
-  get    'signup'  => 'users#new'
+   get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   resources :articles do
     resources :comments
+
   end
+  get 'messages' => 'format'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
