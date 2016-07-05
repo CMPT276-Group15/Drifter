@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :articles
-
+  has_many :messages, foreign_key: :sender_id
   attr_accessor :remember_token
   before_save { self.email = email.downcase }
   validates :name, presence: true
