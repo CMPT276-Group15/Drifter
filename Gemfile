@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 #This is for bootstrap
-gem 'bootstrap-sass', '~> 3.3.6'   #install boostrap
+gem 'bootstrap-sass', '3.3.6'   #install boostrap
 
 gem 'bcrypt','3.1.7'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -38,6 +38,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'faker'
 end
 
 group :development do
