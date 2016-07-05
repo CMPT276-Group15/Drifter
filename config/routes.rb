@@ -13,7 +13,6 @@ Rails.application.routes.draw do
     resources :comments
 
   end
-  get 'messages' => 'format'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
