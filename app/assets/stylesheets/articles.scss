@@ -2,17 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 table{
-  float:none;
-#  margin-left: auto;
-#  margin-right: auto;
-border-collapse: collapse;
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
 }
 table tr td{
   padding: 10px;
+}
+
+#Show{
+  background-color: blue;
+  border: solid black;
+  text-align: center;
+  margin: 10px 10px 10px 10px;
+text-decoration: none;
+}
+#Edit{
+  background-color: green;
+  border: solid black;
+  text-align: center;
+
+}
+#Delete{
+  background-color: red;
+  border: solid black;
+  text-align: center;
 
 }
 thead{
-  text-align: left;
+clear:both;
   background-color: #00308f;
   color: #FFF;
 
@@ -27,9 +46,3 @@ thead th{
 .list_line_odd{
   background-color: #FEFEFA;
 }
-// h1{
-//  #float: none;
-// 	#margin-left: auto;
-// 	#margin-right: auto;
-// 	#background-color: red;
-// }
