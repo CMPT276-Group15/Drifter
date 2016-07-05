@@ -1,0 +1,22 @@
+$navbar-default-bg: orange;
+
+#logo{
+    float: left;
+    font-size: 1.8em;
+    color:white;
+    font-family: "Curlz MT", Times, serif;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    font-weight: bold;
+    
+}
+
+#logo:hover {
+    color: lightblue;
+    text-decoration: none;
+    
+}
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
