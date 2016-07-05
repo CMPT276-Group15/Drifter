@@ -9,13 +9,14 @@ table{
 }
 table tr td{
   padding: 10px;
-
 }
 
 #Show{
   background-color: blue;
   border: solid black;
   text-align: center;
+  margin: 10px 10px 10px 10px;
+text-decoration: none;
 }
 #Edit{
   background-color: green;
@@ -30,7 +31,7 @@ table tr td{
 
 }
 thead{
-clear:both;  
+clear:both;
   background-color: #00308f;
   color: #FFF;
 
