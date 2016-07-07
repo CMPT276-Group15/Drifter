@@ -26,7 +26,9 @@
       <h2>
         Hello, <%= @user.name %>
       </h2>
-      
+      <section class="stats">
+        <%= render 'shared/stats' %> 
+        </section> 
       <section class="micropost_form"> 
       <%= render 'shared/micropost_form' %> 
       </section> 
@@ -34,16 +36,10 @@
     </section>
      
   </aside>
-  <div class="col-md-8">
-       <% if @user.microposts.any? %> 
-       <h3>Microposts (<%= @user.microposts.count %>)</h3> 
-       
-       <ol class="microposts">
-         <%= render @microposts %> 
-         </ol> 
-         <%= will_paginate @microposts %>
-         <% end %> 
-         </div> 
+  <div class="col-md-8"> 
+  <h3>Micropost Feed</h3> 
+  <%= render 'shared/feed' %> 
+  </div> 
 </div>
 
 
