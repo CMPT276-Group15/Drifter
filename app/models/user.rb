@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :microposts, dependent: :destroy  
   has_many :articles
   has_many :messages, foreign_key: :sender_id
   attr_accessor :remember_token
@@ -13,11 +14,15 @@ class User < ActiveRecord::Base
                       uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
-
+  
+  
   #Multiple user roles
   enum role: [:student, :admin]
   after_initialize :set_default_role, :if => :new_record?
-
+  
+  def feed 
+    Micropost.where("user_id = ?", id) 
+  end
   def set_default_role
     self.role ||= :student
   end

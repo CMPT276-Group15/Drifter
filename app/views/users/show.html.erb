@@ -1,6 +1,6 @@
 <body class="userBody">
 
-<<<<<<< HEAD
+
 <p>
   <%= link_to 'User', users_path %>
   <%= link_to 'Edit', edit_user_path %>
@@ -12,22 +12,40 @@
 
 
 <% provide(:title, @user.name) %>
+ 
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
+      
       <h1>
+        
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
       <br>
       <h2>
         Hello, <%= @user.name %>
-
       </h2>
+      
+      <section class="micropost_form"> 
+      <%= render 'shared/micropost_form' %> 
+      </section> 
+      
     </section>
      
   </aside>
+  <div class="col-md-8">
+       <% if @user.microposts.any? %> 
+       <h3>Microposts (<%= @user.microposts.count %>)</h3> 
+       
+       <ol class="microposts">
+         <%= render @microposts %> 
+         </ol> 
+         <%= will_paginate @microposts %>
+         <% end %> 
+         </div> 
 </div>
+
 
 <% if current_user.admin? %>
   <h1> USER IS ADMIN </h1>
