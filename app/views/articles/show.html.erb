@@ -1,24 +1,16 @@
-<ul>
 
-
-<li>
-  <%= link_to 'User', user_path %>
-</li>
-  <li>
-  <%= link_to 'Articles', articles_path %>
-</li>
-</ul>
-<!-- <%= link_to 'Home', controller: 'articles' %> -->
-
-<p>
-  <strong>Title:</strong>
+<div id="articleWrapper">
+<h2 id="titlebubble">
+  <strong>
   <%= @article.title %>
-</p>
+  </strong>
+</h2>
 
-<p>
-  <strong>Text:</strong>
+<p id="textbubble">
   <%= @article.text %>
 </p>
+</div>
+
 
 <h2>Comments</h2>
 <%= render @article.comments %>

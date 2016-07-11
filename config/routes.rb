@@ -6,13 +6,55 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
   get 'welcome/index'
-   get    'signup'  => 'users#new'
+  get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+  resources :users, only: [:index]
+
+  resources :microposts, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
   resources :articles do
     resources :comments
   end
+
+# for messaging eachother
+resources :mailbox
+resources :conversations, only: [:index, :show, :destroy]
+resources :messages, only: [:new, :create]
+
+resources :conversations, only: [:index, :show, :destroy] do
+  member do
+    post :reply
+  end
+end
+
+resources :conversations, only: [:index, :show, :destroy] do
+  member do
+    post :restore
+  end
+end
+
+resources :conversations, only: [:index, :show, :destroy] do
+  member do
+    post :mark_as_read
+  end
+end
+
+# conversations
+  resources :conversations do
+    member do
+      post :reply
+      post :trash
+      post :untrash
+    end
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

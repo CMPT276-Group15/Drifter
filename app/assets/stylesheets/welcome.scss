@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body{
-    background-color: #BBB155;
+    background-image: url(bg_texture_1.jpg);
     //Implement background image
     //background-image: url("bg_texture_1");
     //background-repeat: no-repeat;
@@ -23,7 +23,7 @@ a{
 	display: block;
 	height: 10%;
 	margin-right: 10px;
-	
+
 	text-decoration: none;
 }
 
@@ -51,11 +51,16 @@ a{
 }
 #blurb_top{
 	text-align: center;
-	
-}/*
+
+}
+#bgImg{
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+}
+/*
 #p_buttons{
 	height: 100%;
 	width: 100%;
 }*/
-
-

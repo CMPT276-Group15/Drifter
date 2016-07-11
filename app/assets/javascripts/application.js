@@ -12,5 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require turbolinks
 //= require_tree .
+// = require jquery.turbolinks
+//= require chosen-jquery
+//= require messages
+@import 'chosen';
