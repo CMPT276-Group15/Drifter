@@ -6,14 +6,9 @@
     <section class="user_info">
       
       <h1>
-        
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
-      <br>
-      <h2>
-        Hello, <%= @user.name %>
-      </h2>
       
       
     </section>
@@ -22,19 +17,22 @@
   
 </div>
 
+<!--Map-->
 <div>
 
-<p style="height: 400px; width: 1000px"> Insert Map </p>
+	<p style="height: 400px; width: 1000px"> Insert Map </p>
 
 </div>
 
-
+<!--Write posts-->
 <section class="stats">
         <%= render 'shared/stats' %> 
         </section> 
       <section class="micropost_form"> 
       <%= render 'shared/micropost_form' %> 
 </section> 
+
+<!--Render posts-->
 <div class="col-md-8"> 
   <h3>Journal</h3> 
   <p>
@@ -42,6 +40,7 @@
   </p>
 </div> 
 
+<!--Admin detection-->
 <% if current_user.admin? %>
   <h1> USER IS ADMIN </h1>
 <% else %>
