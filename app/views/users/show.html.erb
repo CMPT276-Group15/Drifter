@@ -34,9 +34,11 @@
 
 <!--Render posts-->
 <div class="col-md-8"> 
-  <h3>Journal</h3> 
+<%= render 'follow_form' if logged_in? %>
+<h3>Journal</h3> 
   <p>
   <%= render 'shared/feed' %> 
+  
   </p>
 </div> 
 
