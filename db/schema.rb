@@ -48,13 +48,6 @@ ActiveRecord::Schema.define(version: 20160706222245) do
   add_index "journals", ["user_id", "created_at"], name: "index_journals_on_user_id_and_created_at", using: :btree
   add_index "journals", ["user_id"], name: "index_journals_on_user_id", using: :btree
 
-  create_table "messages", force: :cascade do |t|
-    t.text     "body"
-    t.integer  "sender_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "microposts", force: :cascade do |t|
     t.text     "content"
     t.integer  "user_id"
