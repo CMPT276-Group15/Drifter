@@ -2,6 +2,16 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
 
+# describe User do
+#   it {should have_many(:messages)}
+# end
+#   it {should belong_to(:sender).class_name('User')}
+#   it {should have_many(:recipients)}
+#   it {should have_many(:users).through(:recipients)}
+#   it {should validate_presense_of(:sender)}
+#   it {should validate_presense_of(:body)}
+# end
+
   def setup
     @user = User.new(name: "Example User", email: "user@example.com",
             password: "foobar", password_confirmation: "foobar")
@@ -55,5 +65,7 @@ test "password should have a minimum length" do
   @user.password = @user.password_confirmation = "a" * 5
   assert_not @user.valid?
 end
-
+test "authenticated? should return false for a user with nil digest" do
+    assert_not @user.authenticated?('')
+end
 end

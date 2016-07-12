@@ -1,0 +1,80 @@
+$navbar-default-bg: orange;
+
+#logo{
+    float: left;
+    font-size: 1.8em;
+    color:white;
+    font-family: "Curlz MT", Times, serif;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    font-weight: bold;
+    
+}
+
+#logo:hover {
+    color: lightblue;
+    text-decoration: none;
+    
+}
+
+.center {
+    text-align: center;
+    
+}
+
+.jumbotron {
+    padding-top: 15px;
+    background-image: asset-url('bg_map_2.jpg');
+    background-size:100% 100%;
+    overflow: hidden;
+    height: 600px;
+
+}
+
+.jumbotron h1 {
+    color: white !important;
+    text-align: center;
+    margin-top: 2px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    
+}
+
+.jumbotron p {
+    color: white !important;
+    text-align: center;
+    margin-top: 2px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    
+}
+
+.article-meta-details {
+    border-top: 1px solid #eaeaea;
+    margin-top: 15px;
+}
+
+.article-actions {
+    border-top: 1px solid #eaeaea;
+    padding-top: 5px;
+}
+
+.article-title {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.article-body {
+    border-top: 1px solid #eaeaea;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.form-control-orange:focus {
+  border-color: orange !important;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6) !important;
+}
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
