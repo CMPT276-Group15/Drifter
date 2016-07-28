@@ -1,15 +1,16 @@
 class UsersController < ApplicationController
-  #before_action :logged_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]  
+  #before_action :logged_in_user, only: [:index, :edit, :update, :destroy, :following, :followers] 
+  before_action :set_user, only: [:edit, :update, :show]
   before_action :require_same_user, only: [:edit, :update, :destroy]
   def index
     @users = User.paginate(page: params[:page], per_page:10) 
   end
   def show
-   @user = User.find(params[:id])
+   #@user = User.find(params[:id])
    @microposts = @user.microposts.paginate(page: params[:page]) 
    @micropost = current_user.microposts.build if logged_in? 
    @feed_items = @user.feed.paginate(page: params[:page]) 
- end
+  end
   def new
     @user = User.new
 
@@ -31,7 +32,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id]) 
   end
   def update 
-      @user = User.find(params[:id])
+      #@user = User.find(params[:id])
       if @user.update(user_params)
          flash[:success] = "Your account has been changed"
          redirect_to articles_path
@@ -62,13 +63,17 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
     end
+    
+    def set_user
+      @user = User.find(params[:id])
+    end
 
-   def require_same_user
-      if current_user != @user
-         flash[:danger] = "You can only edit your own account"
-         redirect_to root_path
-      end
-   end
+    def require_same_user
+        if current_user != @user
+           flash[:danger] = "You can only edit your own account"
+           redirect_to root_path
+        end
+    end
 
 
 end
