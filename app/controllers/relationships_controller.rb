@@ -4,7 +4,7 @@ class RelationshipsController < ApplicationController
     user = User.find(params[:followed_id]) 
     current_user.follow(user) 
     respond_to do |format| 
-      format.html { redirect_to @user } 
+      format.html { redirect_to users_path } 
       format.js 
     end
   end
