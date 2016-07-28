@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]  
-  before_action :correct_user, only: [:edit, :update] 
+  #before_action :logged_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]  
+  before_action :require_same_user, only: [:edit, :update, :destroy]
   def index
-    @users = User.paginate(page: params[:page]) 
+    @users = User.paginate(page: params[:page], per_page:10) 
   end
   def show
    @user = User.find(params[:id])
@@ -15,14 +15,15 @@ class UsersController < ApplicationController
 
   end
   def create
-    @user = User.new(user_params) 
-    if @user.save  
-      log_in @user 
-      flash[:success] = "Welcome to the Sample App!" 
-      redirect_to @user 
-    else
+    @user = User.new(user_params)
+    if @user.save
+       session[:user_id] = @user.id
        
-      render 'new' 
+       flash[:success] = "Hello #{@user.name}, welcome to Drifter!"
+       
+       redirect_to user_path(@user)
+    else
+       render 'new'
     end
   end
   
@@ -30,14 +31,13 @@ class UsersController < ApplicationController
     @user = User.find(params[:id]) 
   end
   def update 
-    
-    @user = User.find(params[:id]) 
-    if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated" 
-      redirect_to @user 
-    else
-      render 'edit' 
-    end
+      @user = User.find(params[:id])
+      if @user.update(user_params)
+         flash[:success] = "Your account has been changed"
+         redirect_to articles_path
+      else
+         render 'edit'
+      end
   end
   
   def following 
@@ -62,16 +62,13 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
     end
-    def logged_in_user 
-      unless logged_in? 
-      store_location 
-      flash[:danger] = "Please log in." 
-      redirect_to login_url 
-    end
-    def correct_user 
-      @user = User.find(params[:id]) 
-      redirect_to(root_url) unless current_user?(@user)
-    end
-  end
+
+   def require_same_user
+      if current_user != @user
+         flash[:danger] = "You can only edit your own account"
+         redirect_to root_path
+      end
+   end
+
 
 end
