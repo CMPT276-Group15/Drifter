@@ -18,7 +18,7 @@
 
 <div class='row'>
     <div class='col-xs-12'>
-        
+
         <%= form_for(@article, :html => { class: "form-horizontal", role:"form", method: :patch }) do |f| %>
             <div class="form-group">
                 <div class="control-label col-sm-2">
@@ -27,13 +27,13 @@
                 <div class="col-sm-8">
                     <%= f.text_field :title, class: "form-control", placeholder: "Title of article", autofocus: true %>
                 </div>
-                
+
 
             </div>
             <div class="form-group">
-                <div class="control-label col-sm-2">            
+                <div class="control-label col-sm-2">
                     <%= f.label :text, "Description:" %>
-                    
+
                 </div>
                 <div class="col-sm-8">
                     <%= f.text_area :text, rows: 10, class: "form-control", placeholder: "Body of article" %>
@@ -47,9 +47,8 @@
         <% end %>
         <br><br><br>
         <div class="col-xs-10 col-xs-offset-1.7">
-            <%= link_to 'Cancel Update', articles_path, class:'btn btn-danger btn-lg' %>
+            <%= link_to 'Cancel Update', article_path, class:'btn btn-danger btn-lg' %>
         </div>
 
     </div>
 </div>
-

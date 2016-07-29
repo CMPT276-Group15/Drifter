@@ -15,5 +15,5 @@
  */
 
 body {
-    background-image: url(bg_texture_1.jpg);
+    background-image: 'assets/bg_texture_1.jpg';
 }
