@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/main'
+
   resources :users
 
   get 'users/new'
