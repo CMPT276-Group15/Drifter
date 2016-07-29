@@ -4,18 +4,29 @@
 
 #left{
 	display: inline;
+	margin-left: auto;
+    margin-right: auto;
+	width: 20%;
+	background-color: red;
 
 }
 #map{
 	display: inline;
+	margin-left: auto;
+    margin-right: auto;
+	width: 80%;
+	background-color: blue;
 }
 #right{
 	display: inline;
+	margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    background-color: green;
 }
 #feed{
 	width: 80%;
 	margin-left: auto;
     margin-right: auto;
-    width: 6em;
     background-color: black;
 }
