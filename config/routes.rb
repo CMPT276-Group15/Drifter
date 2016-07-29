@@ -10,14 +10,14 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
-  resources :users do 
-    member do 
-      get :following, :followers 
+  resources :users do
+    member do
+      get :following, :followers
     end
   end
-  
-  resources :microposts, only: [:create, :destroy] 
-  resources :relationships, only: [:create, :destroy] 
+
+  resources :microposts, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
   resources :articles do
     resources :comments
   end
@@ -76,4 +76,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  match ':controller(/:action(/:id))', :via => :get
+
 end
