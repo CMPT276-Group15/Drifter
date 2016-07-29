@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 
 #This is for bootstrap
 gem 'bootstrap-sass', '3.3.6'   #install boostrap
-
+gem 'ckeditor'
+gem "non-stupid-digest-assets"
+gem "paperclip", '4.3.2'
 gem 'bcrypt','3.1.7'
 gem 'faker', '1.4.2'
 gem 'carrierwave', '0.10.0'
