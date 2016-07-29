@@ -1,6 +1,7 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 table{
   clear: both;
   float: left;
@@ -46,21 +47,40 @@ thead th{
 .list_line_odd{
   background-color: #FEFEFA;
 }
-#articleWrapper{
-  background-color: green;
-}
+// #articleWrapper{
+//   background-color: green;
+// }
+// p{
+//   clear: both;
+// }
 #titlebubble{
   clear: both;
   float: left;
-  width: 100%;
+  // margin-left: 25%;
+  // margin-right: 25%;
+  // width: 50%;
+  padding-left: 5px;
+  padding-right: 5px;
   margin-top: 45px;
+  margin-bottom: 10px;
   background-color: red;
-  text-align: center;
+  text-align: left;
+  text-decoration-color:currentColor;
 }
 #textbubble{
   clear: both;
   float: left;
   width: 100%;
   margin-top: 10px;
+  margin-bottom: 10px;
+
   text-align: left;
+}
+.article-actions{
+  clear: both;
+}
+
+h3{
+  clear: both;
+  float: left;
 }

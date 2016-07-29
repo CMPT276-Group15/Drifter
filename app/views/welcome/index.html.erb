@@ -4,25 +4,27 @@
 	<title>Drifter</title>
 </head>
 <body>
-	<%= link_to 'Home',articles_path, class: "btn btn-primary btn-lg" %>
+	<%= link_to 'About','welcome/show', class: "btn btn-primary btn-lg" %>
 	<br>
-	
+
 	<div class="center jumbotron">
 		<h1>Drifter</h1>
-	
-	
+
+
 		<!--<p>Find me in app/views/welcome/index.html.erb</p> !SlateforRemoval-->
-		
-		<div id = 'blurb_top'><p>Drifter is a Social Network for the world</p>
-		<p> Drifter is a personal assistant for travellers </p>
-		<p> Drifter is whatever you want it to be </p>
-		<p> Let's guide eachother! </p>
+
+		<div id = 'blurb_top'>
+		<p> Drift Away, </p>
+		<p> Explore Great Travel Tips,</p>
+		<p> Colaborate To Create </p>
+		<p>The Ultimate Trip</p>
 		</div>
 		<div id = 'block_buttons'>
-		<p id = 'p_buttons'><%= button_to "Login!", login_path, :class => "btn button_log", :method => :get %> <%= button_to "Sign up!", signup_path, :class => " btn button_log", :method => :get %></p>
+		<p id = 'p_buttons'><%= button_to "Login!", login_path, :class => "btn button_log", :method => :get %> <%= button_to "Sign up!",
+		 signup_path, :class => " btn button_log", :method => :get %></p>
 		</div>
-		
-		
+
+
 		<!--<p>Explore our site <%= link_to "Check out some posts!", articles_path %></p> // Implement later-->
 	</div>
 

@@ -4,12 +4,12 @@ source 'https://rubygems.org'
 gem 'bootstrap-sass', '3.3.6'   #install boostrap
 
 gem 'bcrypt','3.1.7'
-gem 'faker', '1.4.2' 
+gem 'faker', '1.4.2'
 gem 'carrierwave', '0.10.0'
-gem 'mini_magick', '3.8.0' 
-gem 'fog', '1.36.0' 
+gem 'mini_magick', '3.8.0'
+gem 'fog', '1.36.0'
 gem 'will_paginate', '3.0.7'
-gem 'bootstrap-will_paginate', '0.0.10' 
+gem 'bootstrap-will_paginate', '0.0.10'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use posgress as the database for Active Record
@@ -22,6 +22,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+gem 'jquery-turbolinks'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
