@@ -1,5 +1,6 @@
 class RelationshipsController < ApplicationController
-  #before_action :logged_in_user  #Commented out because broke?
+  #Recurring Issue,line 3 !!v
+  before_action :logged_in_user, only: [:edit, :update]
   def create 
     user = User.find(params[:followed_id]) 
     current_user.follow(user) 
