@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 #This is for bootstrap
+gem 'acts_as_votable', '~> 0.10.0'  #users can vote for articles
 gem 'bootstrap-sass', '3.3.6'   #install boostrap
 gem 'ckeditor'
 gem "non-stupid-digest-assets"
