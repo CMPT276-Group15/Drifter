@@ -1,5 +1,20 @@
 <head>
-	<script type="text/javascript" src="assets/maps.js"></script>
+	<!-- SCRIPT FOR API -->
+	<!-- Working towards taking out 
+	of the head -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3aPCpwCW9S-4JXgFor_b5GlfooWBSBBs"></script>
+	<script>
+	function initialize() {
+	  var mapProp = {
+		center:new google.maps.LatLng(51.508742,-0.120850),
+		zoom:5,
+		mapTypeId:google.maps.MapTypeId.ROADMAP
+	  };
+	  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);
+	console.log("Test");
+	</script>
 </head>
 
 <body>
@@ -17,6 +32,8 @@
 
 
 	<div id = 'feed'> Post feed </div>
+	
+	
 </body>
 
 
