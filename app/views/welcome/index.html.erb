@@ -27,6 +27,55 @@
 
 		<!--<p>Explore our site <%= link_to "Check out some posts!", articles_path %></p> // Implement later-->
 	</div>
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+	  <ol class="carousel-indicators">
+	    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+	    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+	    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+	    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+	  </ol>
+
+  <!-- Wrapper for slides -->
+	  <div class="carousel-inner" role="listbox">
+	    <div class="item active">
+	      <%= link_to image_tag('bu1.jpg'), 'https://travelwithdrifter.herokuapp.com/' %>
+	      <div class="carousel-caption">
+	        <p>Louvre Museum</p>
+	      </div>
+	    </div>
+	    <div class="item">
+	      <%= link_to image_tag('bu2.jpg'), 'https://travelwithdrifter.herokuapp.com/' %>
+	      <div class="carousel-caption">
+	        <p>London</p>
+	      </div>
+	    </div>
+	    <div class="item">
+	      <%= link_to image_tag('bu4.jpg'), 'https://travelwithdrifter.herokuapp.com/' %>
+	      <div class="carousel-caption">
+	        <p>Carribean</p>
+	      </div>
+	    </div>
+	    <div class="item">
+	      <%= link_to image_tag('bu3.jpg'), 'https://travelwithdrifter.herokuapp.com/' %>
+	      <div class="carousel-caption">
+	        <p>Mount Everest</p>
+	      </div>
+	    </div>
+
+  	</div>
+
+	  <!-- Controls -->
+	  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+	    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	    <span class="sr-only">Previous</span>
+	  </a>
+	  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+	    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	    <span class="sr-only">Next</span>
+	  </a>
+	</div>
+
 
 </body>
 </html>
