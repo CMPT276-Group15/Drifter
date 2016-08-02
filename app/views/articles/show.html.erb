@@ -1,14 +1,18 @@
 <body>
 <div id="articleWrapper">
-<h1 id="titlebubble">
-  <strong>
-  <%= @article.title %>
-  </strong>
-</h1>
+  <div align="center">
 
-<p id="textbubble">
-  <%= @article.text %>
-</p>
+      <h1>
+        <%= @article.title %>
+      </h1>
+
+  </div>
+  <br>
+  <div>
+
+      <%= raw @article.text %>
+
+  </div>
 </div>
 
 <br>
