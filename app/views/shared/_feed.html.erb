@@ -1,5 +1,5 @@
 <br>
-<% if @feed_items.any? %>
+<% if @feed_items.try(:any?) %>
 <ol class="microposts">
 <%= render @feed_items %>
 </ol>
