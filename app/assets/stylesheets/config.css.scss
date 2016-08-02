@@ -75,6 +75,31 @@ $navbar-default-bg: orange;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6) !important;
 }
 
+footer {
+    margin-top: 45px;
+    padding-top: 5px;
+    border-top:1px solid black;
+    color: #777;
+}
+
+footer a:hover {
+    color: green;
+}
+
+footer small {
+    float: left;
+}
+
+footer ul {
+    float: right;
+    list-style: none;
+}
+
+footer ul li {
+    float: left;
+    margin-left: 15px;
+}
+
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
