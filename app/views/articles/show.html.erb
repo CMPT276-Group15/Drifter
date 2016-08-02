@@ -22,6 +22,21 @@
 </div>
 
 <br>
+<div class="btn-group">
+            
+    <%= link_to like_article_path(@article), method: :put, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-chevron-up"></span>
+        Upvote
+        <%= @article.get_upvotes.size %>
+    <% end %>
+    <%= link_to dislike_article_path(@article), method: :put, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-chevron-down"></span>
+        Downvote
+        <%= @article.get_downvotes.size %>
+    <% end %>
+</div>
+
+<br>
 <h3>Comments</h3>
 <br>
 

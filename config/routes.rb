@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   resources :articles do
     resources :comments
+    member do
+      put "like", to: "articles#upvote"
+      put "dislike", to: "articles#downvote"
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
