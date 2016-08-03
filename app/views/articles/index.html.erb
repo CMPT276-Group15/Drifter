@@ -3,6 +3,7 @@
 
 <%= link_to 'New article', new_article_path, class:'btn btn-success btn-lg' %>
 
+
 <br><br><br>
 <div align="center">
     <%= will_paginate %>
@@ -18,7 +19,7 @@
             <div class="article-body">
                 <%= raw article.text %>        <!-- I dont want to display the whole message because it takes up so much space -->
                 <div class="article-meta-details"></div>
-                    <small>Created by: <%= article.user.name if article.user %>, <%= time_ago_in_words(article.created_at) %> ago,
+                    <small>Created by: <%= link_to article.user.name, article.user if article.user %>, <%= time_ago_in_words(article.created_at) %> ago,
                       <br>last updated: <%= time_ago_in_words(article.updated_at) %> ago </small>
             </div>
             <% if logged_in? && current_user == article.user %>
