@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :forecasts
   get 'home/main'
 
   resources :users

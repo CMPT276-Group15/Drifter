@@ -58,6 +58,10 @@ group :development do
   gem 'spring'
 end
 
+#Weather forcecasting
+gem 'forecast_io'
+gem 'figaro'
+
 
 
 group :production do
