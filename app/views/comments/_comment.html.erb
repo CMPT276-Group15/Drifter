@@ -9,6 +9,10 @@
   <strong>Comment:</strong>
   <%= comment.body %>
 </p>
+<p>
+  <strong>Created By:</strong>
+  <%= link_to comment.username %>
+</p>
 <% if logged_in? && current_user.name == comment.username %>
   <p>
     <%= link_to 'Destroy Comment', [comment.article, comment],
